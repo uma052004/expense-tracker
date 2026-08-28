@@ -18,17 +18,19 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("ReactPolicy", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("https://ornate-quokka-cf6754.netlify.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
 
+// 👇 Create the app here
 var app = builder.Build();
 
-app.UseCors("ReactPolicy");
+// Middleware
+app.UseCors("AllowFrontend");
 
 if (app.Environment.IsDevelopment())
 {
