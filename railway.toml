@@ -1,0 +1,8 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "cd ExpenseTracker.API && dotnet publish -c Release -o out"
+
+[deploy]
+startCommand = "dotnet ExpenseTracker.API/out/ExpenseTracker.API.dll"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
