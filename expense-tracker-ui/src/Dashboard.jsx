@@ -7,7 +7,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const API = "http://localhost:5052/api/Expenses";
+const API = "https://expense-tracker-production-26eb.up.railway.app/api/Expenses";
 
 function Dashboard({ user, onLogout }) {
   const [expenses, setExpenses] = useState([]);

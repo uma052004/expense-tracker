@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API = "http://localhost:5052/api/Auth/login";
+const API = "https://expense-tracker-production-26eb.up.railway.app/api/Auth/login";
 
 function Login({ onLogin, goToSignup }) {
   const [form, setForm] = useState({
