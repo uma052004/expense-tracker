@@ -25,8 +25,9 @@ function Signup({ goToLogin }) {
       alert("Registration Successful");
       goToLogin();
     } catch (err) {
-      alert(err.response?.data || "Registration Failed");
-    }
+  console.log(err.response);
+  alert(err.response?.data || err.message);
+}
   };
 
   return (
