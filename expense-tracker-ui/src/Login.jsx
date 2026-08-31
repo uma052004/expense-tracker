@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import "./App.css";
-
 const API = "https://expense-tracker-production-26eb.up.railway.app/api/Auth/login";
 
 function Login({ onLogin, goToSignup }) {
