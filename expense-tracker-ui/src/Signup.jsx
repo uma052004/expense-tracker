@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import "./App.css";
-const API = "https://expense-tracker-production-26eb.up.railway.app/api/Auth/register";
+const API =
+  "https://heroic-laughter-production-5139.up.railway.app/api/Auth/register";
 
 function Signup({ goToLogin }) {
   const [user, setUser] = useState({
