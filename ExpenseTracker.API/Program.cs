@@ -10,8 +10,9 @@ builder.Services.AddSwaggerGen();
 
 // MySQL
 // MySQL
+// MySQL
 var connectionString =
-    Environment.GetEnvironmentVariable("DefaultConnection")
+    Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection")
     ?? builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -19,7 +20,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         connectionString,
         ServerVersion.AutoDetect(connectionString)
     ));
-
 // CORS
 builder.Services.AddCors(options =>
 {

@@ -17,8 +17,10 @@ public class AuthController : ControllerBase
     }
 
     // REGISTER
-    [HttpPost("register")]
-    public async Task<IActionResult> Register(User user)
+  [HttpPost("register")]
+public async Task<IActionResult> Register(User user)
+{
+    try
     {
         if (await _context.Users.AnyAsync(x => x.Email == user.Email))
             return BadRequest("Email already exists");
@@ -28,6 +30,11 @@ public class AuthController : ControllerBase
 
         return Ok("Registration Successful");
     }
+    catch (Exception ex)
+    {
+        return StatusCode(500, ex.Message);
+    }
+}
 
  // LOGIN
 [HttpPost("login")]
