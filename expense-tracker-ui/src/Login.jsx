@@ -1,8 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./App.css";
-const API =
-  "https://heroic-laughter-production-5139.up.railway.app/api/Auth/login";
+const API = "https://heroic-laughter-production-5139.up.railway.app/api/Auth/login";
 
 function Login({ onLogin, goToSignup }) {
   const [form, setForm] = useState({
